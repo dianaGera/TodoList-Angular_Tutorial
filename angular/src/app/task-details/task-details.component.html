@@ -1,0 +1,9 @@
+
+
+<div class="tasks-list">
+    <ul *ngFor="let task of tasks">
+        <li (click)="onSelect(task)">{{task.text}} <fa-icon [icon]="faBars"></fa-icon><fa-icon [icon]="faXmark" class="faXmark"></fa-icon></li>
+        <app-task-item [task]="selectedTask" *ngIf="task === selectedTask"></app-task-item>
+    </ul>
+</div>
+

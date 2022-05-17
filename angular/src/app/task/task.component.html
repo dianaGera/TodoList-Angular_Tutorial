@@ -1,0 +1,6 @@
+<h2>Task Board</h2>
+
+<div class="create-task">
+    <app-create-task [btn]="btn"></app-create-task>
+    <app-task-details (outEnterTask)="addTask()"></app-task-details>
+</div>
