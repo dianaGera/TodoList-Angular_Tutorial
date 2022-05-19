@@ -2,5 +2,10 @@
 
 <div class="create-task">
     <app-create-task [btn]="btn"></app-create-task>
-    <app-task-details (outEnterTask)="addTask()"></app-task-details>
+    <app-task-details
+          (outEnterTask)="addTask()"
+          [tasks]="tasks"
+          (deleteTaskEvent)="deleteTask($event)"
+    ></app-task-details>
+
 </div>

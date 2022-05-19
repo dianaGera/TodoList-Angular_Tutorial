@@ -1,13 +1,30 @@
-.task-info
-  margin-bottom: 40px
+
+.task-detail-block
+  display: flex
+
+  .task-info
+    margin-bottom: 40px
 
 .flex
     display: flex
     p
-        margin: 5px
-        text-indent: 20px
-        color: red
+      width: fit-content
+      margin: 5px
+      text-indent: 20px
+      color: red
     p:first-child
         color: black
         min-width: 120px
         text-align: right
+
+    .input-task:focus
+      outline: none
+      border-bottom: 1px solid #f5a071
+
+    .input-task
+      width: fit-content
+      padding: 2px
+      border: none
+      border-bottom: 1px solid #fad5c1
+      color: red
+      margin-left: -2px

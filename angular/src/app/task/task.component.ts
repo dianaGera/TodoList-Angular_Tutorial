@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../services/task.service';
+import { Task } from '../Task'
 
 @Component({
   selector: 'app-task',
@@ -6,11 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./task.component.sass']
 })
 export class TaskComponent implements OnInit {
-  btn?:string = 'add'
+  tasks: Task[] = [];
+  btn?:string = 'add';
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks)
   }
 
   btnCreate() {
@@ -19,5 +23,17 @@ export class TaskComponent implements OnInit {
 
   addTask() {
     console.log('Added')
+  }
+
+  deleteTask(task: Task) {
+    this.taskService
+      .deleteTask(task)
+      .subscribe(() => this.tasks = this.tasks
+      .filter(t => t.id! !== task.id)
+    );
+  }
+
+  setReminderQuery (task: Task) {
+    // this.taskService.changeItem(task).subscribe(() => this.tasks = this.tasks.filter(t => t.id! !== task.id))
   }
 }

@@ -6,18 +6,34 @@
         list-style-type: none
         margin: 0
         padding: 0
+        li.selected
+          border: 1px solid red
         li
-            color: #a0502d
-            font-family: monospace
-            font-size: 1.2em
-            font-weight: 1000
-            padding: 15px 20px
-            margin-bottom: 15px
-            border-radius: 10px
-            border: 2px dotted #f6af79
+          color: #a0502d
+          font-family: monospace
+          font-size: 1.2em
+          font-weight: 1000
+          margin-bottom: 15px
+          border-radius: 10px
+          border: 2px dotted #f6af79
+          display: flex
+          justify-content: space-between
+
+          .task
+            width: 85%
+            padding: 10px
+
 
         li:hover, li:active
             border-color: #f98832
 
 .faXmark
-  font-size: 1.5em
+  font-size: 1.1em
+  margin-left: 7px
+
+.task-icons
+  margin-top: 10px
+  margin-right: 8px
+
+.faBell
+  color: red

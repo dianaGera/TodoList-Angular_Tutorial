@@ -1,9 +1,22 @@
-
-
 <div class="tasks-list">
     <ul *ngFor="let task of tasks">
-        <li (click)="onSelect(task)">{{task.text}} <fa-icon [icon]="faBars"></fa-icon><fa-icon [icon]="faXmark" class="faXmark"></fa-icon></li>
-        <app-task-item [task]="selectedTask" *ngIf="task === selectedTask"></app-task-item>
+        <li [ngClass]="{selected: selectedTask == task}">
+          <span class="task" (click)="onSelect(task)">{{task.text}}</span>
+          <span class="task-icons">
+            <a href="#" (click)="setReminder(task)" [ngClass]="is_selectedReminder && selectedReminder == task? 'faBell': ''"><fa-icon [icon]="faBell"></fa-icon></a>
+            <a href="#" (click)="onDelete(task)" class="faXmark"><fa-icon [icon]="faXmark" ></fa-icon></a>
+          </span>
+
+        </li>
+
+
+
+        <app-task-item
+              [task]="selectedTask"
+              *ngIf="task === selectedTask && !is_hidden"
+              [is_hidden]="false"
+        ></app-task-item>
     </ul>
 </div>
+
 

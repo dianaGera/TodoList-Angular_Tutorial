@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TASKS } from '../task_list';
 
 @Component({
   selector: 'app-create-task',
@@ -15,7 +14,7 @@ export class CreateTaskComponent implements OnInit {
   }
 
   btnCreate() {
-    
+
   }
 
 }

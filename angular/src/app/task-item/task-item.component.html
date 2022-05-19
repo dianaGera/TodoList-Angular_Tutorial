@@ -1,15 +1,17 @@
-<div class="task-info" *ngIf="task">
+<div class="task-detail-block" *ngIf="!is_hidden&&task">
+  <div class="task-info">
     <div class="flex">
         <p>id: </p><p>{{task.id}}</p>
     </div>
     <div class="flex">
-        <p>content: </p><p>{{task.text}}</p>
+        <p>content: </p><p><input type="text" class='input-task' [(ngModel)]="task.text"></p>
     </div>
     <div class="flex">
-        <p>date: </p><p>{{task.day}}</p>
+        <p>date_created: </p><p>{{task.day_added}}</p>
     </div>
     <div class="flex">
         <p>is_reminder: </p><p>{{task.reminder}}</p>
     </div>
 </div>
-<!-- <fa-icon [icon]="faXmark"></fa-icon> -->
+</div>
+
