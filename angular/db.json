@@ -4,13 +4,13 @@
       "id": 2,
       "text": "Food Shopping",
       "day_added": "May 7th at 12:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 3,
       "text": "Food Shopping",
       "day_added": "May 7th at 12:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 4,

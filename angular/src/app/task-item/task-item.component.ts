@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Task } from '../Task';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task-item',
@@ -11,7 +11,8 @@ export class TaskItemComponent implements OnInit {
   @Input() task?: Task;
   @Input() is_hidden!: boolean;
 
-  faCode = faCode;
+  faCheck = faCheck;
+  is_checked: boolean = false;
 
   constructor() { }
 
@@ -19,8 +20,18 @@ export class TaskItemComponent implements OnInit {
   }
 
   hideTask() {
-    console.log(this.is_hidden)
     this.is_hidden = true
-    console.log(this.is_hidden)
+  }
+
+  updateContent() {
+    this.is_checked = !this.is_checked
+    console.log('it is works')
+  }
+
+  @HostListener('document:keypress', ['$event'])
+  startSearch(event: KeyboardEvent) {
+    if (event.code === "Enter") {
+      //Code that you need to run
+    }
   }
 }

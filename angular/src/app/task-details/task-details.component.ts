@@ -14,12 +14,8 @@ export class TaskDetailsComponent implements OnInit {
 
   @Input() tasks?: Task[];
 
-
-
   selectedTask?: Task
-  selectedReminder?: Task
 
-  is_selectedReminder ?: boolean
   is_hidden: boolean = true
 
   faBell = faBell
@@ -37,8 +33,7 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   setReminder(task: Task) {
-    this.is_selectedReminder = !this.is_selectedReminder
-    this.selectedReminder = task
+    this.setReminderEvent.emit(task)
   }
 
   onDelete(value: Task) {

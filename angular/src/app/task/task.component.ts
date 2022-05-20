@@ -33,7 +33,8 @@ export class TaskComponent implements OnInit {
     );
   }
 
-  setReminderQuery (task: Task) {
-    // this.taskService.changeItem(task).subscribe(() => this.tasks = this.tasks.filter(t => t.id! !== task.id))
+  setReminder (task: Task) {
+    task.reminder = !task.reminder
+    this.taskService.updateReminder(task).subscribe()
   }
 }
