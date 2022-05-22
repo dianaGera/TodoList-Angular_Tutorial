@@ -2,26 +2,32 @@
   "tasks": [
     {
       "id": 2,
-      "text": "Food Shopping",
-      "day_added": "May 7th at 12:30pm",
-      "reminder": true
+      "day_added": "2022-06-12T19:30",
+      "reminder": false,
+      "text": "Go to the docto"
     },
     {
       "id": 3,
-      "text": "Food Shopping",
-      "day_added": "May 7th at 12:30pm",
+      "day_added": "2018-06-12T19:30",
+      "reminder": true,
+      "text": "Repair laptop"
+    },
+    {
+      "id": 6,
+      "text": "New Task",
+      "day_added": "2022-05-22T19:13",
       "reminder": true
     },
     {
-      "id": 4,
-      "text": "Food Shopping",
-      "day_added": "May 7th at 12:30pm",
-      "reminder": false
+      "id": 7,
+      "text": "New Task",
+      "day_added": "2022-05-22T19:15",
+      "reminder": true
     },
     {
-      "id": 5,
-      "text": "Food Shopping",
-      "day_added": "May 7th at 12:30pm",
+      "id": 8,
+      "text": "New Task",
+      "day_added": "2022-05-22T19:15",
       "reminder": false
     }
   ]

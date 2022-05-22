@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Task } from '../Task'
+
 
 @Component({
   selector: 'app-create-task',
@@ -6,15 +8,29 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./create-task.component.sass']
 })
 export class CreateTaskComponent implements OnInit {
+
+  @Output() createTaskEvent: EventEmitter<Task> = new EventEmitter();
+
   @Input() btn?: string;
+  id: number = 0
+  task: string = '';
+  date = new Date();
+  reminder: boolean = false
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  btnCreate() {
-
+  onCreateTask() {
+    const newTask: Task = {
+      id!: this.id,
+      text: this.task,
+      day_added: this.date.toISOString().slice(0, 16),
+      reminder: this.reminder
+    }
+    this.createTaskEvent.emit(newTask)
   }
 
 }

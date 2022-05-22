@@ -6,13 +6,13 @@
     <div class="flex">
       <p>content: </p>
       <p>
-          <input type="text" class='input-task' [(ngModel)]="task.text">
-          <span><fa-icon [icon]="faCheck" [ngClass]="{'faCheck': true, 'faChecked': is_checked}"  (click)="updateContent()"></fa-icon></span>
+          <input id="keypress" type="text" class='input-task' [(ngModel)]="task.text" value="{task}">
       </p>
 
     </div>
     <div class="flex">
-        <p>date_created: </p><p>{{task.day_added}}</p>
+        <p>to_complite: </p>
+        <input id="day-keypress" class="day-added" type="datetime-local" value="{{task.day_added}}">
     </div>
     <div class="flex">
         <p>is_reminder: </p><p>{{task.reminder}}</p>

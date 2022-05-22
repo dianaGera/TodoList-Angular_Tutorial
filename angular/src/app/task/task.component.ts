@@ -17,13 +17,8 @@ export class TaskComponent implements OnInit {
     this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks)
   }
 
-  btnCreate() {
-    console.log('Create')
-  }
+  last = this.taskService
 
-  addTask() {
-    console.log('Added')
-  }
 
   deleteTask(task: Task) {
     this.taskService
@@ -37,4 +32,11 @@ export class TaskComponent implements OnInit {
     task.reminder = !task.reminder
     this.taskService.updateReminder(task).subscribe()
   }
+
+  createNewTask(task: Task) {
+    this.taskService.createTask(task).subscribe((task) => (
+      this.tasks.push(task)
+    ))
+  }
+
 }

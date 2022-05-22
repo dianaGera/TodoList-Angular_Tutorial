@@ -22,12 +22,22 @@ export class TaskService {
     return this.http.get<Task[]>(this.apiUrl)
   }
 
+  createTask(task: Task): Observable<Task> {
+    const url = `${this.apiUrl}`
+    return this.http.post<Task>(url, task, HttpOptions)
+  }
+
   deleteTask(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.delete<Task>(url);
   }
 
   updateReminder(task: Task): Observable<Task> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<Task>(url, task, HttpOptions)
+  }
+
+  updateTaskContent(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(url, task, HttpOptions)
   }

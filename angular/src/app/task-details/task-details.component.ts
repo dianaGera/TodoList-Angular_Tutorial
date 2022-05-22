@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../Task';
+import { TaskService } from '../services/task.service';
 import { faBell, faXmark, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -22,7 +23,7 @@ export class TaskDetailsComponent implements OnInit {
   faXmark = faXmark
   faBarsStaggered = faBarsStaggered
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +39,13 @@ export class TaskDetailsComponent implements OnInit {
 
   onDelete(value: Task) {
     this.deleteTaskEvent.emit(value);
+  }
+
+  onUpdateTask(data: any) {
+    data.task.text = data.title
+    data.task.day_added = data.day
+    this.is_hidden = true
+    this.taskService.updateTaskContent(data.task).subscribe();
   }
 }
 

@@ -1,4 +1,4 @@
-<form action="#" class="form-box">
-    <input type="text" placeholder="Add new Task">
-    <button class='btn' type="submit" (click)='btnCreate()'>{{btn}}</button>
-</form>
+<form action="#" class="form-box" (ngSubmit)="onCreateTask()">
+    <input type="text" placeholder="Add new Task" name="task" id="task" [(ngModel)]="task">
+    <button class='btn' type="submit">{{btn}}</button>
+  </form>

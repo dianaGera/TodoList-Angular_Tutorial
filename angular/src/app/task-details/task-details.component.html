@@ -13,6 +13,7 @@
               [task]="selectedTask"
               *ngIf="task === selectedTask && !is_hidden"
               [is_hidden]="false"
+              (updateTaskEvent)="onUpdateTask($event)"
         ></app-task-item>
     </ul>
 </div>
