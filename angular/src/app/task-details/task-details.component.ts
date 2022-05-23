@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../Task';
 import { TaskService } from '../services/task.service';
-import { faBell, faXmark, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faXmark, faBarsStaggered, faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task-details',
@@ -21,6 +21,7 @@ export class TaskDetailsComponent implements OnInit {
 
   faBell = faBell
   faXmark = faXmark
+  faCircle = faCircle
   faBarsStaggered = faBarsStaggered
 
   constructor(private taskService: TaskService) { }

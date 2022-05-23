@@ -24,13 +24,18 @@ export class CreateTaskComponent implements OnInit {
   }
 
   onCreateTask() {
-    const newTask: Task = {
+    if (this.task !== '') {
+      const newTask: Task = {
       id!: this.id,
       text: this.task,
       day_added: this.date.toISOString().slice(0, 16),
       reminder: this.reminder
     }
     this.createTaskEvent.emit(newTask)
+    this.task = ''
+    } else {
+      alert('Enter a valid content')
+    }
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
 import { Task } from '../Task'
+import { UiService } from '../services/ui.service'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-task',
@@ -11,14 +13,18 @@ export class TaskComponent implements OnInit {
   tasks: Task[] = [];
   btn?:string = 'add';
 
-  constructor(private taskService: TaskService) { }
+  text!: string
+  showHistory!: boolean;
+  subscription!: Subscription;
+
+
+  constructor(private taskService: TaskService,
+              private uiService:UiService) { }
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks)
+   
   }
-
-  last = this.taskService
-
 
   deleteTask(task: Task) {
     this.taskService
@@ -39,4 +45,7 @@ export class TaskComponent implements OnInit {
     ))
   }
 
+  toggleShowHistory() {
+    this.showHistory = !this.showHistory
+  }
 }

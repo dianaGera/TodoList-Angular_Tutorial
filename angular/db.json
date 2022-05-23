@@ -3,13 +3,13 @@
     {
       "id": 2,
       "day_added": "2022-06-12T19:30",
-      "reminder": false,
-      "text": "Go to the docto"
+      "reminder": true,
+      "text": "Go to the doctor"
     },
     {
       "id": 3,
       "day_added": "2018-06-12T19:30",
-      "reminder": true,
+      "reminder": false,
       "text": "Repair laptop"
     },
     {
@@ -20,14 +20,46 @@
     },
     {
       "id": 7,
-      "text": "New Task",
-      "day_added": "2022-05-22T19:15",
+      "text": "New task\\",
+      "day_added": "2022-05-23T09:09",
       "reminder": true
     },
     {
       "id": 8,
+      "text": "New task 2",
+      "day_added": "2022-05-23T09:11",
+      "reminder": false
+    }
+  ],
+  "history": [
+    {
+      "id": 2,
+      "day_added": "2022-06-12T19:30",
+      "reminder": true,
+      "text": "Go to the doctor"
+    },
+    {
+      "id": 3,
+      "day_added": "2018-06-12T19:30",
+      "reminder": false,
+      "text": "Repair laptop"
+    },
+    {
+      "id": 6,
       "text": "New Task",
-      "day_added": "2022-05-22T19:15",
+      "day_added": "2022-05-22T19:13",
+      "reminder": true
+    },
+    {
+      "id": 7,
+      "text": "New task\\",
+      "day_added": "2022-05-23T09:09",
+      "reminder": true
+    },
+    {
+      "id": 8,
+      "text": "New task 2",
+      "day_added": "2022-05-23T09:11",
       "reminder": false
     }
   ]

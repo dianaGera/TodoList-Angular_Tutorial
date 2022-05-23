@@ -12,6 +12,7 @@ import { TaskComponent } from './task/task.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     TaskComponent,
     TaskDetailsComponent,
     TaskItemComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    HistoryComponent
   ],
   imports: [
     CommonModule,

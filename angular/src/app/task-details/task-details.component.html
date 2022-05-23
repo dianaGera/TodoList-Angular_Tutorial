@@ -1,6 +1,7 @@
-<div class="tasks-list">
+<div class="tasks-list">{{tasks}}
     <ul *ngFor="let task of tasks">
         <li [ngClass]="{selected: selectedTask == task && !is_hidden}">
+          <span id="circle"></span>
           <span class="task" (click)="onSelect(task)">{{task.text}}</span>
           <span class="task-icons">
             <a href="#" (click)="setReminder(task)" [ngClass]="task.reminder? 'faBell': ''"><fa-icon [icon]="faBell"></fa-icon></a>

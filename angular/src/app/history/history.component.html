@@ -1,0 +1,14 @@
+
+<div class="tasks-list">
+  <ul *ngFor="let task of tasks">
+      <li>
+        <span id="circle"></span>
+        <span class="task">{{task.text}}</span>
+        <span class="task-icons">
+          <a href="#" [ngClass]="task.reminder? 'faBell': ''"></a>
+          <a href="#" class="faXmark"><fa-icon ></fa-icon></a>
+        </span>
+
+      </li>
+  </ul>
+</div>

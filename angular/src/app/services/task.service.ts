@@ -6,15 +6,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 const HttpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+
   })
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class TaskService {
-  private apiUrl = 'http://localhost:5000/tasks'
+  private apiUrl = 'http://localhost:5000'
 
   constructor(private http: HttpClient) { }
 

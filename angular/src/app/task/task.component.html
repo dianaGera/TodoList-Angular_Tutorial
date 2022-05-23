@@ -1,7 +1,6 @@
 
 
 <div class="create-task">
-
     <app-create-task
           [btn]="btn"
           (createTaskEvent)="createNewTask($event)">
@@ -12,4 +11,8 @@
           (deleteTaskEvent)="deleteTask($event)"
           (setReminderEvent)="setReminder($event)"
     ></app-task-details>
+    <p class="hidden-link"><a (click)="toggleShowHistory()">{{text}}ssssss</a></p>
+
+    <!-- <app-history [tasks]="tasks"
+                ></app-history> -->
 </div>
